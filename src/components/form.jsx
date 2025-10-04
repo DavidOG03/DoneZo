@@ -1,16 +1,15 @@
 import { useState } from "react";
 
 const Form = ({ OnAddTask }) => {
-  const [task, setTask] = useState("");
+  const [description, setDescription] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!task.trim()) return;
+    if (!description.trim()) return;
 
-    const trimmedTask = { text: task.trim(), completed: false, id: Date.now() };
-    OnAddTask(trimmedTask);
-    setTask("");
+    OnAddTask(description);
+    setDescription("");
   };
 
   return (
@@ -19,9 +18,9 @@ const Form = ({ OnAddTask }) => {
         type="text"
         placeholder="Enter your task"
         className="border p-2 w-full"
-        value={task}
+        value={description}
         onChange={(e) => {
-          setTask(e.target.value);
+          setDescription(e.target.value);
         }}
       />
       <button type="submit" className="bg-blue-500 text-white p-2 mt-2">

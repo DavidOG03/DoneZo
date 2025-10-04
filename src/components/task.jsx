@@ -9,10 +9,13 @@ const Task = ({ task, onDeleteTask, onToggleTask }) => {
         onChange={() => {
           onToggleTask(task.id);
         }}
+        className="w-4 h-4 cursor-pointer"
       />
-      <span className={task.completed ? "line-through" : ""}>{task.text}</span>
+      <span className={task.completed ? "line-through text-gray-500" : ""}>
+        {task.text}
+      </span>
       <button
-        className="bg-transparent border-0 self-end ml-auto"
+        className="bg-transparent border-0 self-end ml-auto cursor-pointer"
         onClick={() => onDeleteTask(task.id)}
       >
         <svg
@@ -22,7 +25,7 @@ const Task = ({ task, onDeleteTask, onToggleTask }) => {
           viewBox="0 0 24 24"
         >
           <path
-            fill="#fb2c36"
+            fill="gray"
             d="M19 4h-3.5l-1-1h-5l-1 1H5v2h14M6 19a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V7H6z"
           />
         </svg>
