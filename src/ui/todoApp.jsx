@@ -8,25 +8,37 @@ const TodoApp = () => {
 
   if (!taskItems) return;
 
-  const handleAddTask = (task) => {
-    setTaskItems((tasks) => [...tasks, task]);
+  const handleAddTask = (text) => {
+    const trimmedTask = {
+      text,
+      completed: false,
+      id: Date.now(),
+    };
+    setTaskItems((taskItems) => [...taskItems, trimmedTask]);
   };
 
   const handleDeleteTask = (taskId) => {
-    setTaskItems((tasks) => tasks.filter((task) => task.id !== taskId));
+    setTaskItems((taskItems) => taskItems.filter((task) => task.id !== taskId));
   };
 
   const handleToggleTask = (taskId) => {
     setTaskItems((tasks) =>
-      tasks.map((task) => {
-        task.id === taskId ? { ...task, completed: !task.completed } : task;
-      })
+      tasks.map(
+        (task) =>
+          task.id === taskId
+            ? { ...task, completed: !task.completed } // return updated task
+            : task // return unchanged task
+      )
     );
+    console.log("Toggled task with ID:", taskId);
   };
+
   return (
     <div>
       <Form OnAddTask={handleAddTask} />
       <TaskList
+        // isCompleted={isCompleted}
+        // task={taskItems[0]}
         taskItems={taskItems}
         onDeleteTask={handleDeleteTask}
         onToggleTask={handleToggleTask}
