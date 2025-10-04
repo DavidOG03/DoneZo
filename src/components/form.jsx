@@ -6,11 +6,10 @@ const Form = ({ OnAddTask }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!task) return;
+    if (!task.trim()) return;
 
-    const trimmedTask = { task: task.trim(), completed: false, id: Date.now() };
+    const trimmedTask = { text: task.trim(), completed: false, id: Date.now() };
     OnAddTask(trimmedTask);
-    console.log(trimmedTask);
     setTask("");
   };
 

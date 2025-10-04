@@ -6,19 +6,24 @@ const TaskList = ({ taskItems, onDeleteTask, onToggleTask }) => {
     <div className="mt-4">
       <h2 className="text-xl font-semibold mb-2">Your Tasks</h2>
       <div className="border border-gray-300 rounded-md">
-        <ul>
-          {taskItems.map((task) => {
-            return (
-              <Task
-                task={task}
-                onDeleteTask={onDeleteTask}
-                // isCompleted={isCompleted}
-                onToggleTask={onToggleTask}
-                key={task.id}
-              />
-            );
-          })}
-        </ul>
+        {taskItems.length === 0 ? (
+          <p className="p-4 text-gray-500 italic text-center">
+            No tasks yet. Add one above 👆
+          </p>
+        ) : (
+          <ul>
+            {taskItems.map((task) =>
+              task && task.id ? (
+                <Task
+                  key={task.id}
+                  task={task}
+                  onDeleteTask={onDeleteTask}
+                  onToggleTask={onToggleTask}
+                />
+              ) : null
+            )}
+          </ul>
+        )}
       </div>
     </div>
   );

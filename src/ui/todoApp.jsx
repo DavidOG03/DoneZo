@@ -27,8 +27,6 @@ const TodoApp = () => {
     <div>
       <Form OnAddTask={handleAddTask} />
       <TaskList
-        // isCompleted={isCompleted}
-        // task={taskItems[0]}
         taskItems={taskItems}
         onDeleteTask={handleDeleteTask}
         onToggleTask={handleToggleTask}
