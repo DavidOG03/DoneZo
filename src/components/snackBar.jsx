@@ -9,17 +9,17 @@ const SnackBar = ({ onSetActiveTab, isActiveTab }) => {
         }`}
         role="menuitem"
         aria-roledescription="Go to TodoApp"
-        onClick={onSetActiveTab}
+        onClick={() => onSetActiveTab(0)}
       >
         TodoApp
       </li>
       <li
-        className={`text-xs text-black cursor-pointer px-4 py-2 w-full text-center${
+        className={`text-xs text-black cursor-pointer px-4 py-2 w-full text-center ${
           isActiveTab === 1 ? "font-bold" : ""
         }`}
         role="menuitem"
         aria-roledescription="Go to Travel List"
-        onClick={onSetActiveTab}
+        onClick={() => onSetActiveTab(1)}
       >
         Travel List
       </li>
@@ -29,7 +29,7 @@ const SnackBar = ({ onSetActiveTab, isActiveTab }) => {
         }`}
         role="menuitem"
         aria-roledescription="Go to NotesApp"
-        onClick={onSetActiveTab}
+        onClick={() => onSetActiveTab(2)}
       >
         NotesApp
       </li>
