@@ -8,8 +8,7 @@
   --purple: hsl(264, 100%, 62%);
   --orange: hsla(30, 82%, 78%, 1);
   --background-accent: hsl(32, 43%, 93%);
-  --font-hkgrotesk: "HK Grotesk", sans-serif;
-  --font-inter: "Inter Tight", sans-serif;
+  --font-kumbh: "Kumbh Sans", sans-serif;
   --font-big: clamp(2rem, 4vw, 3.75rem);
 }
 
@@ -20,8 +19,7 @@
   --color-purple: var(--purple);
   --color-orange: var(--orange);
   --color-background-accent: var(--orange);
-  --font-hkgrotesk: "HK Grotesk", sans-serif;
-  --font-inter: "Inter Tight", sans-serif;
+  --font-kumbh: "Kumbh Sans", sans-serif;
   --text-big: var(--font-big);
 }
 
@@ -34,18 +32,13 @@
   /* --orange: hsl(3, 100%, 59%); */
   --orange: rgb(70, 44, 14);
   --background-accent: rgb(25, 14, 27);
-  --font-hkgrotesk: "HK Grotesk", sans-serif;
-  --font-inter: "Inter Tight", sans-serif;
+  --font-kumbh: "Kumbh Sans", sans-serif;
 }
 
 body {
   width: 100%;
   height: 100vh;
   background: var(--background);
-  background: radial-gradient(
-    var(--background) 50%,
-    var(--background-accent) 85% /* var(--) 100% */
-  );
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
@@ -60,4 +53,5 @@ body {
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
+  font-family: var(--font-kumbh);
 }
