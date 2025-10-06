@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Form from "../components/form";
-import TaskList from "../components/taskList";
+import Form from "../components/todoComponents/form";
+import TaskList from "../components/todoComponents/taskList";
 
 const TodoApp = () => {
   const [taskItems, setTaskItems] = useState([]);
