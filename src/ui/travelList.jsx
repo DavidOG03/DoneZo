@@ -54,10 +54,10 @@ const TravelList = () => {
     totalItems > 0 ? Math.round((packedItems / totalItems) * 100) : 0;
 
   return (
-    <div className="w-full max-w-4xl mx-auto">
+    <div className="w-full mx-auto">
       {/* Header */}
       <div className="bg-gradient-to-r from-orange-400 to-orange-500 p-6 rounded-t-lg text-white text-center">
-        <h1 className="text-3xl font-bold">🌴 Travel Packing List 🧳</h1>
+        <h1 className="text-3xl font-bold">Travel Packing List </h1>
         <p className="text-sm mt-2 opacity-90">Pack smart, travel light!</p>
       </div>
 
@@ -161,10 +161,10 @@ const TravelList = () => {
         <div className="text-center text-white">
           <p className="text-lg font-semibold">
             {totalItems === 0
-              ? "Start adding items to your list! ✈️"
+              ? "Start adding items to your list!"
               : percentage === 100
-              ? "You're all packed and ready to go! ✨"
-              : `💼 You have ${totalItems} item${
+              ? "You're all packed and ready to go!"
+              : ` You have ${totalItems} item${
                   totalItems !== 1 ? "s" : ""
                 } on your list, and you already packed ${packedItems} (${percentage}%)`}
           </p>

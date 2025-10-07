@@ -92,7 +92,7 @@ const NotesApp = () => {
   };
 
   return (
-    <div className="flex h-[calc(100vh-200px)] bg-white rounded-lg shadow-lg overflow-hidden">
+    <div className="flex h-[calc(100vh-200px)] w-full bg-white rounded-lg shadow-lg overflow-hidden">
       <div className="w-80 bg-gray-50 border-r border-gray-200 flex flex-col">
         <div className="p-4 bg-gradient-to-r from-purple-500 to-purple-600">
           <button
